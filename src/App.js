@@ -1,8 +1,8 @@
 import logo from "./logo.svg";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Thing, Heading, Wrapper } from "./components/About";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Button } from "react-bootstrap";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useReducer } from "react";
 import styled from "styled-components";
 import ReactApexCharts from "react-apexcharts";
 
@@ -153,37 +153,37 @@ import ReactApexCharts from "react-apexcharts";
 // }
 // export default App;
 
-function App() {
-  const [data, setData] = useState();
+// function App() {
+//   const [data, setData] = useState();
 
-  const fetchData = () => {
-    fetch("https://jsonplaceholder.typicode.com/todos/")
-      .then((response) => response.json())
-      .then((json) => setData(json));
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
-  console.log(data);
-  return (
-    <>
-      <div className="container mt-4">
-        {data?.map((d, i) => {
-          return d.completed === true ? (
-            <div key={i}>
-              <span>{d.title}</span>
-              <br />
-              <span>{`Completed:- ${d.completed}`}</span>
-            </div>
-          ) : (
-            ""
-          );
-        })}
-      </div>
-    </>
-  );
-}
-export default App;
+//   const fetchData = () => {
+//     fetch("https://jsonplaceholder.typicode.com/todos/")
+//       .then((response) => response.json())
+//       .then((json) => setData(json));
+//   };
+//   useEffect(() => {
+//     fetchData();
+//   }, []);
+//   console.log(data);
+//   return (
+//     <>
+//       <div className="container mt-4">
+//         {data?.map((d, i) => {
+//           return d.completed === true ? (
+//             <div key={i}>
+//               <span>{d.title}</span>
+//               <br />
+//               <span>{`Completed:- ${d.completed}`}</span>
+//             </div>
+//           ) : (
+//             ""
+//           );
+//         })}
+//       </div>
+//     </>
+//   );
+// }
+// export default App;
 
 // function App() {
 //   const [data, setData] = useState();
@@ -225,3 +225,28 @@ export default App;
 //   );
 // }
 // export default App;
+
+const initialState = {count: 0};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return {count: state.count + 1};
+    case 'decrement':
+      return {count: state.count - 1};
+    default:
+      throw new Error();
+  }
+}
+
+function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return (
+    <>
+      Count: {state.count}
+      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+      <button onClick={() => dispatch({type: 'increment'})}>+</button>
+    </>
+  );
+}
+export default App;

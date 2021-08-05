@@ -1,43 +1,52 @@
-import styled from 'styled-components'
+// import styled from 'styled-components'
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
-const Heading = styled.h1`
-  font-size: 5em;
-  text-align: center;
-  color: ${props => props.inputColor || "palevioletred"};
-`;
+// const Title = styled.h1`
+//   font-size: 1.5em;
+//   text-align: center;
+//   color: palevioletred;
+// `;
+// const Heading = styled.h1`
+//   font-size: 5em;
+//   text-align: center;
+//   color: ${props => props.inputColor || "palevioletred"};
+// `;
 
-// Create a Wrapper component that'll render a <section> tag with some styles
-const Wrapper = styled.section`
-  padding: 4em;
-  background: papayawhip;
-`;
-const Thing = styled.div.attrs((/* props */) => ({ tabIndex: 0 }))`
-  color: blue;
+// // Create a Wrapper component that'll render a <section> tag with some styles
+// const Wrapper = styled.section`
+//   padding: 4em;
+//   background: papayawhip;
+// `;
+// const Thing = styled.div.attrs((/* props */) => ({ tabIndex: 0 }))`
+//   color: blue;
 
-  &:hover {
-    color: red; // <Thing> when hovered
-  }
+//   &:hover {
+//     color: red; // <Thing> when hovered
+//   }
 
-  & ~ & {
-    background: tomato; // <Thing> as a sibling of <Thing>, but maybe not directly next to it
-  }
+//   & ~ & {
+//     background: tomato; // <Thing> as a sibling of <Thing>, but maybe not directly next to it
+//   }
 
-  & + & {
-    background: lime; // <Thing> next to <Thing>
-  }
+//   & + & {
+//     background: lime; // <Thing> next to <Thing>
+//   }
 
-  &.something {
-    background: orange; // <Thing> tagged with an additional CSS class ".something"
-  }
+//   &.something {
+//     background: orange; // <Thing> tagged with an additional CSS class ".something"
+//   }
 
-  .something-else & {
-    border: 1px solid; // <Thing> inside another element labeled ".something-else"
-  }
-`
+//   .something-else & {
+//     border: 1px solid; // <Thing> inside another element labeled ".something-else"
+//   }
+// `
 
-export {Title,Heading,Wrapper,Thing}
+// export {Title,Heading,Wrapper,Thing}
+// import React from "react";
+
+// export default function About(props) {
+//   const { key } = props.data;
+ 
+//   return <div>About {key.map((ele,i)=>{
+//     return <>{ele} <br/> </>;
+//   })}</div>;
+// }

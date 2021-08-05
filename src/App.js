@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import { Thing, Heading, Wrapper } from "./components/About";
+import About, { Thing, Heading, Wrapper } from "./components/About";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Button } from "react-bootstrap";
 import { useState, useRef, useEffect, useReducer } from "react";
@@ -126,13 +126,13 @@ import ReactApexCharts from "react-apexcharts";
 //     // `current` points to the mounted text input element
 //     setCount(count + 1);
 //   };
-//   useEffect(() => {
-//     prevCountRef.current = count;
-//     console.log(prevCountRef.current);
-//     setTimeout(() => {
-//       setLoading(false)
-//     }, 5000);
-//   });
+  // useEffect(() => {
+  //   prevCountRef.current = count;
+  //   console.log(prevCountRef.current);
+  //   setTimeout(() => {
+  //     setLoading(false)
+  //   }, 5000);
+  // });
 //   console.log(prevCountRef.current);
 //   const prevCount = prevCountRef.current;
 
@@ -226,27 +226,42 @@ import ReactApexCharts from "react-apexcharts";
 // }
 // export default App;
 
-const initialState = {count: 0};
+// const initialState = {count: 0};
 
-function reducer(state, action) {
-  switch (action.type) {
-    case 'increment':
-      return {count: state.count + 1};
-    case 'decrement':
-      return {count: state.count - 1};
-    default:
-      throw new Error();
-  }
-}
+// function reducer(state, action) {
+//   switch (action.type) {
+//     case 'increment':
+//       return {count: state.count + 1};
+//     case 'decrement':
+//       return {count: state.count - 1};
+//     default:
+//       throw new Error();
+//   }
+// }
 
-function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  return (
-    <>
-      Count: {state.count}
-      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
-      <button onClick={() => dispatch({type: 'increment'})}>+</button>
-    </>
-  );
-}
-export default App;
+// function App() {
+//   const [state, dispatch] = useReducer(reducer, initialState);
+//   return (
+//     <>
+//       Count: {state.count}
+//       <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+//       <button onClick={() => dispatch({type: 'increment'})}>+</button>
+//     </>
+//   );
+// }
+// export default App;
+// function App() {
+//   const data = {
+//     key: ['asd', 'qwe', 'tryrt'],
+//   };
+//   // [{},{}] // Array Of Object
+//   // {0:[1,2,3,4,5],1:[3,4,5,6,7]} //Object of Arrays
+//   // {} //Object
+//   // [] //Array
+//   return (
+//     <>
+//       <About data={data} />
+//     </>
+//   );
+// }
+// export default App;
